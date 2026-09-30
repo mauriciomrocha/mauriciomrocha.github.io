@@ -1,0 +1,3 @@
+# app-ads.txt de mauriciomrocha.github.io (o AdMob confere este arquivo na raiz do domínio do desenvolvedor,
+# o mesmo endereço cadastrado como "site" do app no Google Play). ID de editor do AdMob do autor (30/09/2026).
+google.com, pub-5129679684985024, DIRECT, f08c47fec0942fa0

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClearScan PDF — Política de Privacidade</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-alt: #f1f5f9;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --primary: #0f52ba;
+      --primary-soft: #e0ebff;
+      --emerald: #0f766e;
+      --emerald-soft: #ccfbf1;
+      --border: #e2e8f0;
+      --radius: 16px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1120;
+        --surface: #131c31;
+        --surface-alt: #1e293b;
+        --text: #f8fafc;
+        --text-muted: #94a3b8;
+        --primary: #60a5fa;
+        --primary-soft: #172554;
+        --emerald: #2dd4bf;
+        --emerald-soft: #042f2e;
+        --border: #1e293b;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 20px;
+    }
+
+    .topbar-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      background: #0f52ba;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .brand-mark::before {
+      content: "";
+      width: 14px;
+      height: 18px;
+      background: #ffffff;
+      border-radius: 2px;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 2.5px;
+      background: #2dd4bf;
+      border-radius: 2px;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      background: var(--surface-alt);
+      padding: 4px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      gap: 4px;
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .lang-btn[aria-pressed="true"] {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .lang-btn:hover:not([aria-pressed="true"]) {
+      color: var(--text);
+    }
+
+    main {
+      max-width: 820px;
+      margin: 32px auto 56px;
+      padding: 0 20px;
+    }
+
+    .hero {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 28px 24px;
+      margin-bottom: 24px;
+    }
+
+    .offline-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--emerald-soft);
+      color: var(--emerald);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(1.6rem, 3vw, 2.15rem);
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .meta {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    p + p {
+      margin-top: 10px;
+    }
+
+    ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    li + li {
+      margin-top: 6px;
+    }
+
+    code {
+      background: var(--surface-alt);
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 0.9em;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-top: 32px;
+    }
+
+    @media (max-width: 600px) {
+      .hero, .card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>ClearScan PDF</span>
+      </div>
+      <nav class="lang-switcher" aria-label="Language selector">
+        <button type="button" class="lang-btn" data-lang="pt" aria-pressed="true">Português</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">English</button>
+        <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">Español</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="policy-content"></main>
+
+  <footer>
+    <p id="footer-text"></p>
+  </footer>
+
+  <script>
+    const TRANSLATIONS = {
+      pt: {
+        htmlLang: "pt-BR",
+        pageTitle: "ClearScan PDF — Política de Privacidade",
+        badge: "🛡️ 100% Offline • Sem permissão de Internet",
+        title: "Política de Privacidade",
+        meta: "Aplicativo: ClearScan PDF • Desenvolvedor: Maurício Matriz da Rocha • Última atualização: 25 de novembro de 2026",
+        sections: [
+          {
+            heading: "1. Compromisso com a Privacidade (Zero Coleta de Dados)",
+            paragraphs: [
+              "O ClearScan PDF foi projetado desde o início para funcionar 100% offline. Nós não coletamos, armazenamos, vendemos ou compartilhamos quaisquer dados pessoais, documentos digitalizados, assinaturas ou métricas de uso.",
+              "O aplicativo não possui anúncios, não utiliza rastreadores de terceiros, não exige criação de conta ou login e não transmite nenhuma informação pela rede."
+            ]
+          },
+          {
+            heading: "2. Ausência Total da Permissão INTERNET",
+            paragraphs: [
+              "O ClearScan PDF não solicita a permissão android.permission.INTERNET no manifesto do Android e remove explicitamente qualquer tentativa de injeção dessa permissão via tools:node=\"remove\" em tempo de compilação.",
+              "Isso garante em nível de sistema operacional que o aplicativo é tecnicamente incapaz de enviar arquivos ou telemetria para servidores externos."
+            ]
+          },
+          {
+            heading: "3. Processamento Exclusivo no Dispositivo",
+            paragraphs: [
+              "Todas as operações — digitalização de páginas, geração de miniaturas, compressão de PDF (< 2 MB), organização em categorias e aplicação de assinatura digital — ocorrem exclusivamente na memória e no armazenamento privado do seu dispositivo.",
+              "Os documentos e a assinatura salva permanecem sob seu controle total e só saem do aparelho se e quando você tocar explicitamente em Compartilhar para enviá-los a outro aplicativo escolhido por você."
+            ]
+          },
+          {
+            heading: "4. Permissões Utilizadas no Android",
+            list: [
+              "CAMERA: usada somente quando você inicia o escaneamento de um documento pela câmera.",
+              "USE_BIOMETRIC / USE_FINGERPRINT: usada apenas caso você ative o bloqueio opcional por biometria ou PIN nas Configurações do app. Os dados biométricos são gerenciados exclusivamente pelo Android.",
+              "VIBRATE: usada apenas para feedback tátil discreto na interface."
+            ]
+          },
+          {
+            heading: "5. Contato e Suporte",
+            paragraphs: [
+              "Se você tiver dúvidas sobre esta Política de Privacidade ou quiser relatar algum problema, entre em contato com o desenvolvedor Maurício Matriz da Rocha através do repositório oficial:"
+            ],
+            contactUrl: "https://github.com/mauriciomrocha/scanner",
+            contactLabel: "https://github.com/mauriciomrocha/scanner"
+          }
+        ],
+        footer: "© 2026 ClearScan PDF — Desenvolvido por Maurício Matriz da Rocha. Software 100% offline."
+      },
+      en: {
+        htmlLang: "en",
+        pageTitle: "ClearScan PDF — Privacy Policy",
+        badge: "🛡️ 100% Offline • No Internet Permission",
+        title: "Privacy Policy",
+        meta: "App: ClearScan PDF • Developer: Maurício Matriz da Rocha • Last updated: November 25, 2026",
+        sections: [
+          {
+            heading: "1. Privacy Commitment (Zero Data Collection)",
+            paragraphs: [
+              "ClearScan PDF was designed from the ground up to operate 100% offline. We do not collect, store, sell, or share any personal data, scanned documents, signatures, or usage analytics.",
+              "The app contains no ads, uses no third-party tracking SDKs, requires no account or login, and never transmits any information over the network."
+            ]
+          },
+          {
+            heading: "2. Zero INTERNET Permission",
+            paragraphs: [
+              "ClearScan PDF does not request the android.permission.INTERNET permission in its Android manifest and explicitly strips any transitive injection via tools:node=\"remove\" at build time.",
+              "This guarantees at the operating system level that the app is technically unable to send files or telemetry to external servers."
+            ]
+          },
+          {
+            heading: "3. On-Device Processing Only",
+            paragraphs: [
+              "All operations — document scanning, thumbnail generation, PDF compression (< 2 MB), category organization, and digital signature flattening — happen exclusively in your device's local memory and private storage.",
+              "Your documents and saved signature remain fully under your control and only leave your device if and when you explicitly tap Share to send a PDF to another app of your choice."
+            ]
+          },
+          {
+            heading: "4. Android Permissions Used",
+            list: [
+              "CAMERA: used solely when you start scanning a document with your camera.",
+              "USE_BIOMETRIC / USE_FINGERPRINT: used only if you enable the optional biometric or device PIN lock in Settings. Biometric credentials are handled exclusively by the Android OS.",
+              "VIBRATE: used solely for subtle haptic feedback in the user interface."
+            ]
+          },
+          {
+            heading: "5. Contact & Support",
+            paragraphs: [
+              "If you have any questions about this Privacy Policy or need support, please contact the developer Maurício Matriz da Rocha through the official project repository:"
+            ],
+            contactUrl: "https://github.com/mauriciomrocha/scanner",
+            contactLabel: "https://github.com/mauriciomrocha/scanner"
+          }
+        ],
+        footer: "© 2026 ClearScan PDF — Developed by Maurício Matriz da Rocha. 100% offline software."
+      },
+      es: {
+        htmlLang: "es",
+        pageTitle: "ClearScan PDF — Política de Privacidad",
+        badge: "🛡️ 100% Offline • Sin permiso de Internet",
+        title: "Política de Privacidad",
+        meta: "Aplicación: ClearScan PDF • Desarrollador: Maurício Matriz da Rocha • Última actualización: 25 de noviembre de 2026",
+        sections: [
+          {
+            heading: "1. Compromiso con la Privacidad (Cero Recopilación de Datos)",
+            paragraphs: [
+              "ClearScan PDF fue diseñado desde el inicio para funcionar 100% offline. No recopilamos, almacenamos, vendemos ni compartimos ningún dato personal, documento escaneado, firma ni métrica de uso.",
+              "La aplicación no muestra anuncios, no utiliza rastreadores de terceros, no requiere cuenta ni inicio de sesión y nunca transmite información por la red."
+            ]
+          },
+          {
+            heading: "2. Ausencia Total del Permiso INTERNET",
+            paragraphs: [
+              "ClearScan PDF no solicita el permiso android.permission.INTERNET en el manifiesto de Android y elimina explícitamente cualquier intento de inyección mediante tools:node=\"remove\" durante la compilación.",
+              "Esto garantiza a nivel del sistema operativo que la aplicación es técnicamente incapaz de enviar archivos o telemetría a servidores externos."
+            ]
+          },
+          {
+            heading: "3. Procesamiento Exclusivo en el Dispositivo",
+            paragraphs: [
+              "Todas las operaciones — escaneo de documentos, generación de miniaturas, compresión de PDF (< 2 MB), organización por categorías y aplicación de firma digital — se realizan exclusivamente en la memoria y el almacenamiento privado de tu dispositivo.",
+              "Tus documentos y tu firma guardada permanecen bajo tu control total y solo salen del dispositivo si y cuando tocas explícitamente Compartir para enviarlos a otra aplicación elegida por ti."
+            ]
+          },
+          {
+            heading: "4. Permisos de Android Utilizados",
+            list: [
+              "CAMERA: se utiliza únicamente cuando inicias el escaneo de un documento con la cámara.",
+              "USE_BIOMETRIC / USE_FINGERPRINT: se utiliza solo si activas el bloqueo opcional por biometría o PIN en Configuración. Los datos biométricos son gestionados exclusivamente por Android.",
+              "VIBRATE: se utiliza únicamente para una respuesta háptica discreta en la interfaz."
+            ]
+          },
+          {
+            heading: "5. Contacto y Soporte",
+            paragraphs: [
+              "Si tienes preguntas sobre esta Política de Privacidad o necesitas soporte, puedes contactar al desarrollador Maurício Matriz da Rocha a través del repositorio oficial:"
+            ],
+            contactUrl: "https://github.com/mauriciomrocha/scanner",
+            contactLabel: "https://github.com/mauriciomrocha/scanner"
+          }
+        ],
+        footer: "© 2026 ClearScan PDF — Desarrollado por Maurício Matriz da Rocha. Software 100% offline."
+      }
+    };
+
+    const contentEl = document.getElementById("policy-content");
+    const footerEl = document.getElementById("footer-text");
+    const buttons = Array.from(document.querySelectorAll(".lang-btn"));
+
+    function renderLanguage(langKey) {
+      const data = TRANSLATIONS[langKey] || TRANSLATIONS.pt;
+      document.documentElement.lang = data.htmlLang;
+      document.title = data.pageTitle;
+      footerEl.textContent = data.footer;
+
+      buttons.forEach((btn) => {
+        btn.setAttribute("aria-pressed", btn.dataset.lang === langKey ? "true" : "false");
+      });
+
+      const sectionsHtml = data.sections.map((section) => {
+        const paragraphsHtml = (section.paragraphs || [])
+          .map((text) => `<p>${text}</p>`)
+          .join("");
+        const listHtml = section.list
+          ? `<ul>${section.list.map((item) => `<li>${item}</li>`).join("")}</ul>`
+          : "";
+        const contactHtml = section.contactUrl
+          ? `<p><a href="${section.contactUrl}" target="_blank" rel="noopener noreferrer">${section.contactLabel}</a></p>`
+          : "";
+
+        return `
+          <section class="card">
+            <h2>${section.heading}</h2>
+            ${paragraphsHtml}
+            ${listHtml}
+            ${contactHtml}
+          </section>
+        `;
+      }).join("");
+
+      contentEl.innerHTML = `
+        <section class="hero">
+          <div class="offline-pill">${data.badge}</div>
+          <h1>${data.title}</h1>
+          <p class="meta">${data.meta}</p>
+        </section>
+        ${sectionsHtml}
+      `;
+    }
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => renderLanguage(btn.dataset.lang));
+    });
+
+    const urlLang = new URLSearchParams(window.location.search).get("lang");
+    const browserLang = (navigator.language || "pt").slice(0, 2).toLowerCase();
+    const initialLang = TRANSLATIONS[urlLang] ? urlLang : (TRANSLATIONS[browserLang] ? browserLang : "pt");
+    renderLanguage(initialLang);
+  </script>
+</body>
+</html>
